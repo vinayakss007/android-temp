@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AbetCRM</string>
+    <string name="nav_leads">Leads</string>
+    <string name="nav_pipeline">Pipeline</string>
+    <string name="nav_settings">Settings</string>
+</resources>

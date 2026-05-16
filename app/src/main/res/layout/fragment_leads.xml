@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_background">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/color_surface"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AbetCRM"
+            android:textColor="@color/color_text_primary"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Stats row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#0F172A"
+            android:padding="12dp">
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                <TextView android:id="@+id/tv_stat_total" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0"
+                    android:textColor="@color/color_text_primary" android:textSize="20sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="TOTAL" android:textColor="@color/color_text_hint" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                <TextView android:id="@+id/tv_stat_won" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0"
+                    android:textColor="@color/color_stage_won" android:textSize="20sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="WON" android:textColor="@color/color_text_hint" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                <TextView android:id="@+id/tv_stat_w_a" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0"
+                    android:textColor="@color/color_whatsapp" android:textSize="20sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="WHATSAPP" android:textColor="@color/color_text_hint" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                <TextView android:id="@+id/tv_conversion" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="0%"
+                    android:textColor="@color/color_stage_new" android:textSize="20sp" android:textStyle="bold"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="RATE" android:textColor="@color/color_text_hint" android:textSize="10sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Search -->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:queryHint="Search leads, phone, messages..."
+            app:iconifiedByDefault="false"
+            android:background="#0F172A"/>
+
+        <!-- Stage chips -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginTop="10dp">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_stages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"/>
+        </HorizontalScrollView>
+
+        <!-- Action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_import_contacts"
+                style="@style/AbetButtonOutlined"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Import Contacts"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_import_calls"
+                style="@style/AbetButtonOutlined"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Import Calls"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sync"
+                style="@style/AbetButtonOutlined"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="↑ Sync"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Lead list -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_leads"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:clipToPadding="false"/>
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="No leads yet.\nCalls and WhatsApp messages\nwill auto-capture here."
+            android:textColor="@color/color_text_hint"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_lead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Lead"
+        app:backgroundTint="@color/color_primary"
+        app:tint="#000000"/>
+
+</LinearLayout>

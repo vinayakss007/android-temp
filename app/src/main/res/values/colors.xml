@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#25D366</color>
+    <color name="color_primary_dark">#128C4A</color>
+    <color name="color_surface">#111827</color>
+    <color name="color_background">#0A0F1A</color>
+    <color name="color_surface_2">#1E293B</color>
+    <color name="color_text_primary">#F1F5F9</color>
+    <color name="color_text_secondary">#94A3B8</color>
+    <color name="color_text_hint">#475569</color>
+    <color name="color_stage_new">#4F8EF7</color>
+    <color name="color_stage_contacted">#F7A84F</color>
+    <color name="color_stage_interested">#A84FF7</color>
+    <color name="color_stage_won">#4FF79E</color>
+    <color name="color_stage_lost">#F74F4F</color>
+    <color name="color_whatsapp">#25D366</color>
+</resources>
